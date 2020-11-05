@@ -43,13 +43,13 @@ export default {
     // new or added documents / did not exist before in database
     ref.onSnapshot(snapshot => {
       snapshot.docChanges().forEach(change => {
-        if ((change.type = "added")) {
+        if (change.type == "added") {
           let doc = change.doc;
           this.messages.push({
             id: doc.id,
             name: doc.data().name,
             message: doc.data().message,
-            timestamp: moment(doc().data.timestamp).format("LTS")
+            timestamp: moment(doc.data().timestamp).format("LTS")
           });
         }
       });

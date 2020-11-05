@@ -1,5 +1,7 @@
 import firebase from 'firebase/app';
-import firestore from 'firebase/firestore';
+import "firebase/firestore";
+import "firebase/analytics";
+
 
 var firebaseConfig = {
   apiKey: "AIzaSyAMTqZ4Rfs4-kwhzuTEWvZJcf1hb6_elzE",
@@ -12,6 +14,8 @@ var firebaseConfig = {
   measurementId: "G-ZKRWTK8BQ2"
 };
 // Initialize Firebase
+window.firebase = firebase;
+console.log('fb', firebase.initializeApp);
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
